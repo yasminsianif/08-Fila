@@ -84,17 +84,43 @@ void insere()
 		return;
 	}
 
-	cout << "Digite o elemento: ";
+	cout << "Digite o elemento:";
 	cin >> novo->valor;
 	novo->prox = NULL;
+	
+	if (inicio == NULL && fim == NULL) {
+		inicio = novo;
+		fim = novo;
+	}
+	else {
+		NO* aux = fim;
+		aux->prox = novo;
+		fim = novo;
+	}
 
 
 }
 
-void remove()
-{
+void remove() {
+	if (inicio = NULL) {
+		cout << "nao existe numero para exclusao" << endl;
+	}
+	else {
+		if (inicio == fim) {
+			NO* aux = inicio;
+			inicio = NULL;
+			fim = NULL;
+			cout << "numero excluido" << aux->valor << endl;
+			free(aux);
+		}
+		else {
+			NO* aux = inicio;
+			inicio = inicio->prox;
+			cout << "numero excluido" << aux->valor << endl;
+			free(aux);
 
-
-
+		}
+	}
 }
+
 
